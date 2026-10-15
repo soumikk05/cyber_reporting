@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+**/venv/
+vnev/
+**/vnev/
+env/
+**/env/
+.venv/
+**/.venv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Uploads (ignore user uploaded files, keep folder)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini

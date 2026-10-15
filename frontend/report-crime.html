@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Crime - Crime Reporting System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <span class="logo-icon">CRS</span>
+                Crime Reporting System
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name" id="userName"></span>
+                    <span class="user-role" id="userRole"></span>
+                </div>
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Report a Crime</h2>
+                    <p class="card-subtitle">Provide detailed information about the incident</p>
+                </div>
+
+                <div id="alertContainer"></div>
+
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label for="crimeType">Crime Type</label>
+                        <select id="crimeType" name="crimeType" required>
+                            <option value="">Select crime type</option>
+                            <option value="Theft">Theft</option>
+                            <option value="Robbery">Robbery</option>
+                            <option value="Assault">Assault</option>
+                            <option value="Vandalism">Vandalism</option>
+                            <option value="Burglary">Burglary</option>
+                            <option value="Fraud">Fraud</option>
+                            <option value="Cybercrime">Cybercrime</option>
+                            <option value="Domestic Violence">Domestic Violence</option>
+                            <option value="Drug Offense">Drug Offense</option>
+                            <option value="Traffic Violation">Traffic Violation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" placeholder="Describe what happened in detail" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Where did this occur?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="datetime">Date & Time</label>
+                        <input type="datetime-local" id="datetime" name="datetime" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Upload Image (Optional)</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                        <small style="color: var(--text-light); display: block; margin-top: 0.5rem;">
+                            Supported formats: JPG, PNG, GIF (Max 5MB)
+                        </small>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1;">
+                            Submit Report
+                        </button>
+                        <a href="user-dashboard.html" class="btn btn-secondary">
+                            View My Reports
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

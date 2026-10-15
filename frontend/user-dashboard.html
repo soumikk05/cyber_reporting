@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reports - Crime Reporting System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">
+                <span class="logo-icon">CRS</span>
+                Crime Reporting System
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <span class="user-name" id="userName"></span>
+                    <span class="user-role" id="userRole"></span>
+                </div>
+                <button onclick="logout()" class="btn btn-secondary btn-sm">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card-header mb-3">
+            <h2 class="card-title">My Crime Reports</h2>
+            <p class="card-subtitle">Track the status of your submitted complaints</p>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+            <a href="report-crime.html" class="btn btn-primary">
+                Report New Crime
+            </a>
+        </div>
+
+        <div id="loadingContainer" class="loading">
+            <div class="spinner"></div>
+            <p>Loading your reports...</p>
+        </div>
+
+        <div id="reportsContainer"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/user-dashboard.js"></script>
+</body>
+</html>
